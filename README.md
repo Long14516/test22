@@ -1,67 +1,121 @@
-# Starter Template with React Navigation
+# 📱 Barcode Scan App (React Native)
 
-This is a minimal starter template for React Native apps using Expo and React Navigation.
+## 📌 Giới thiệu
 
-It includes the following:
+Đây là một ứng dụng **React Native** đơn giản mô phỏng chức năng **quét sản phẩm bằng camera** và hiển thị thông tin sản phẩm.
 
-- Example [Native Stack](https://reactnavigation.org/docs/native-stack-navigator) with a nested [Bottom Tab](https://reactnavigation.org/docs/bottom-tab-navigator)
-- Web support with [React Native for Web](https://necolas.github.io/react-native-web/)
-- TypeScript support and configured for React Navigation
-- Automatic [deep link](https://reactnavigation.org/docs/deep-linking) and [URL handling configuration](https://reactnavigation.org/docs/configuring-links)
-- Theme support [based on system appearance](https://reactnavigation.org/docs/themes/#using-the-operating-system-preferences)
-- Expo [Development Build](https://docs.expo.dev/develop/development-builds/introduction/) with [Continuous Native Generation](https://docs.expo.dev/workflow/continuous-native-generation/)
+Ứng dụng gồm:
 
-## Getting Started
+* **Home Screen**: hiển thị dashboard với các chức năng.
+* **Scan Screen**: hiển thị sản phẩm sau khi quét.
 
-1. Create a new project using this template:
+Project được xây dựng bằng:
 
-   ```sh
-   npx create-expo-app@latest --template react-navigation/template
-   ```
-
-2. Edit the `app.json` file to configure the `name`, `slug`, `scheme` and bundle identifiers (`ios.bundleIdentifier` and `android.bundleIdentifier`) for your app.
-
-3. Edit the `src/App.tsx` file to start working on your app.
-
-## Running the app
-
-- Install the dependencies:
-
-  ```sh
-  npm install
-  ```
-
-- Start the development server:
-
-  ```sh
-  npm start
-  ```
-
-- Build and run iOS and Android development builds:
-
-  ```sh
-  npm run ios
-  # or
-  npm run android
-  ```
-
-- In the terminal running the development server, press `i` to open the iOS simulator, `a` to open the Android device or emulator, or `w` to open the web browser.
-
-## Notes
-
-This project uses a [development build](https://docs.expo.dev/develop/development-builds/introduction/) and cannot be run with [Expo Go](https://expo.dev/go). To run the app with Expo Go, edit the `package.json` file, remove the `expo-dev-client` package and `--dev-client` flag from the `start` script.
-
-We highly recommend using the development builds for normal development and testing.
-
-The `ios` and `android` folder are gitignored in the project by default as they are automatically generated during the build process ([Continuous Native Generation](https://docs.expo.dev/workflow/continuous-native-generation/)). This means that you should not edit these folders directly and use [config plugins](https://docs.expo.dev/config-plugins/) instead. However, if you need to edit these folders, you can remove them from the `.gitignore` file so that they are tracked by git.
-
-## Resources
-
-- [React Navigation documentation](https://reactnavigation.org/)
-- [Expo documentation](https://docs.expo.dev/)
+* React Native
+* Expo
+* React Navigation
 
 ---
 
-Demo assets are from [lucide.dev](https://lucide.dev/)
-# test22
-# test22
+## 🖼️ Giao diện ứng dụng
+
+### Home Screen
+
+Màn hình chính hiển thị các chức năng:
+
+* Scan new
+* Counterfeits
+* Success
+* Directory
+
+### Scan Screen
+
+Màn hình hiển thị sản phẩm sau khi quét:
+
+* Hình ảnh sản phẩm
+* Tên sản phẩm
+* Thương hiệu
+* Nút thêm sản phẩm
+
+---
+
+## 📂 Cấu trúc thư mục
+
+```
+src
+ ├ assets
+ │   ├ avatar.png
+ │   ├ scan.png
+ │   ├ juice.png
+ │   └ ...
+ │
+ ├ navigation
+ │   └ screens
+ │       ├ HomeScreen.tsx
+ │       └ ScanScreen.tsx
+ │
+ ├ App.tsx
+ └ index.tsx
+```
+
+---
+
+## 🚀 Cài đặt và chạy project
+
+### 1️⃣ Cài đặt dependencies
+
+```bash
+npm install
+```
+
+### 2️⃣ Chạy project
+
+```bash
+npx expo start
+```
+
+Sau khi chạy:
+
+* Mở **Expo Go** trên điện thoại
+* Quét **QR Code** để chạy ứng dụng.
+<img width="1920" height="920" alt="image" src="https://github.com/user-attachments/assets/4f78a0b2-8af2-4fb6-aeeb-01457e7845fc" />
+
+<img width="1920" height="925" alt="image" src="https://github.com/user-attachments/assets/4efe8da5-3a9e-4de0-85d2-ce0f1d17ec89" />
+
+---
+
+## ⚙️ Công nghệ sử dụng
+
+* React Native
+* Expo
+* React Navigation
+* TypeScript
+
+---
+
+## 📸 Chức năng chính
+
+✔ Dashboard hiển thị thống kê
+✔ Chuyển màn hình bằng React Navigation
+✔ Hiển thị sản phẩm sau khi scan
+✔ UI mobile layout
+
+---
+
+## 📖 Mục đích project
+
+Project được thực hiện nhằm:
+
+* Làm quen với **React Native**
+* Thực hành **navigation giữa các màn hình**
+* Xây dựng **UI mobile app**
+
+---
+
+## 👨‍💻 Tác giả
+
+**Ngô Hoàng Long-msv:23810310184
+   Lớp:D18CNPM4**
+
+GitHub:
+https://github.com/Long14516
