@@ -1,7 +1,12 @@
 import React from "react";
 import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 
-export default function App() {
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import ScanScreen from "./navigation/screens/ScanScreen";
+const Stack = createNativeStackNavigator();
+
+function HomeScreen({ navigation }: any) {
   return (
     <View style={styles.container}>
       
@@ -13,78 +18,90 @@ export default function App() {
         </View>
 
         <Image
-          source={require("../image/avatar.png")}
+          source={require("./assets/avatar.png")}
           style={styles.avatar}
         />
       </View>
 
-      {/* Title */}
       <Text style={styles.title}>Your Insights</Text>
 
-      {/* Grid */}
       <View style={styles.grid}>
-        
-        <TouchableOpacity style={styles.card}>
-          <Image source={require("../image/scan.png")}/>
+
+        {/* Scan */}
+        <TouchableOpacity
+          style={styles.card}
+          onPress={() => navigation.navigate("Scan")}
+        >
+          <Image source={require("./assets/scan.png")} />
           <Text style={styles.cardTitle}>Scan new</Text>
           <Text style={styles.cardSub}>Scanned 483</Text>
         </TouchableOpacity>
 
+        {/* Counterfeits */}
         <TouchableOpacity style={styles.card}>
-      <View style={styles.iconBox}>
-  <Image
-    source={require("../image/count1.png")}
-    style={styles.rectangle}
-  />
-
-  <Image
-    source={require("../image/count.png")}
-    style={styles.frame}
-  />
-</View>
+          <View style={styles.iconBox}>
+            <Image
+              source={require("./assets/count1.png")}
+              style={styles.rectangle}
+            />
+            <Image
+              source={require("./assets/count.png")}
+              style={styles.frame}
+            />
+          </View>
           <Text style={styles.cardTitle}>Counterfeits</Text>
           <Text style={styles.cardSub}>Counterfeited 32</Text>
         </TouchableOpacity>
 
+        {/* Success */}
         <TouchableOpacity style={styles.card}>
-                         <View style={styles.iconBox}>
-  <Image
-    source={require("../image/success1.png")}
-    style={styles.rectangle}
-  />
-
-  <Image
-    source={require("../image/success.png")}
-    style={styles.frame}
-  />
-</View>
+          <View style={styles.iconBox}>
+            <Image
+              source={require("./assets/success1.png")}
+              style={styles.rectangle}
+            />
+            <Image
+              source={require("./assets/success.png")}
+              style={styles.frame}
+            />
+          </View>
           <Text style={styles.cardTitle}>Success</Text>
           <Text style={styles.cardSub}>Checkouts 8</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.card}>
-                                   <View style={styles.iconBox}>
-  <Image
-    source={require("../image/lich1.png")}
-    style={styles.rectangle}
-  />
 
-  <Image
-    source={require("../image/lich.png")}
-    style={styles.frame}
-  />
-</View>
+        {/* Directory */}
+        <TouchableOpacity style={styles.card}>
+          <View style={styles.iconBox}>
+            <Image
+              source={require("./assets/lich1.png")}
+              style={styles.rectangle}
+            />
+            <Image
+              source={require("./assets/lich.png")}
+              style={styles.frame}
+            />
+          </View>
           <Text style={styles.cardTitle}>Directory</Text>
           <Text style={styles.cardSub}>History 26</Text>
         </TouchableOpacity>
 
       </View>
-
     </View>
   );
 }
 
-const styles = StyleSheet.create({
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Scan" component={ScanScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
 
+const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#f4f4f4",
@@ -101,6 +118,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: "bold",
   },
+
   name: {
     fontSize: 16,
     color: "gray",
@@ -135,11 +153,6 @@ const styles = StyleSheet.create({
     elevation: 3,
   },
 
-  icon: {
-    fontSize: 30,
-    marginBottom: 10,
-  },
-
   cardTitle: {
     fontSize: 16,
     fontWeight: "bold",
@@ -150,22 +163,23 @@ const styles = StyleSheet.create({
     color: "gray",
     marginTop: 4,
   },
+
   iconBox: {
-  width: 60,
-  height: 60,
-  justifyContent: "center",
-  alignItems: "center",
-},
+    width: 60,
+    height: 60,
+    justifyContent: "center",
+    alignItems: "center",
+  },
 
-rectangle: {
-  width: 60,
-  height: 60,
-  borderRadius: 15,
-},
+  rectangle: {
+    width: 60,
+    height: 60,
+    borderRadius: 15,
+  },
 
-frame: {
-  width: 25,
-  height: 25,
-  position: "absolute",
-}
+  frame: {
+    width: 25,
+    height: 25,
+    position: "absolute",
+  },
 });
